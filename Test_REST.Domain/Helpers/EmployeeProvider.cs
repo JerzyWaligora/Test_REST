@@ -1,8 +1,7 @@
-﻿using Test_REST.Domain.Helpers;
-using Test_REST.Domain.Models;
+﻿using Test_REST.Domain.Models;
 using Test_REST.Domain.ValueObjects;
 
-namespace Test_REST.Domain.Services
+namespace Test_REST.Domain.Helpers
 {
     public class EmployeeProvider
     {
@@ -28,7 +27,7 @@ namespace Test_REST.Domain.Services
 
             var maxReferenceNumber = 1;
             var employees = _employeeRepository.GetAll();
-           
+
             if (employees.Any())
                 maxReferenceNumber = employees.Max(e => Convert.ToInt32(e.ReferenceNumber)) + 1;
 
